@@ -60,7 +60,6 @@
 
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.6; overflow-x: hidden; transition: background 0.3s ease, color 0.3s ease; position: relative; }
-    /* Should-4: faint grain texture over the whole page so the dark/blue bg doesn't read flat */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 1; pointer-events: none;
@@ -135,7 +134,6 @@
 
     .nav-right { display: flex; align-items: center; gap: 1.25rem; }
 
-    /* ==================== NAV RESUME BUTTON ==================== */
     .resume-btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.55rem 1.2rem; border-radius: 50px;
@@ -148,7 +146,6 @@
     html[data-theme="light"] .resume-btn:hover { background: #2563eb; }
     .resume-btn svg { width: 14px; height: 14px; stroke-width: 2.5; }
 
-    /* ==================== THEME TOGGLE ==================== */
     .theme-toggle-btn {
       background: var(--card); border: 1px solid var(--border);
       color: var(--text); width: 36px; height: 36px; border-radius: 50%;
@@ -157,7 +154,6 @@
     }
     .theme-toggle-btn:hover { border-color: var(--accent); transform: rotate(15deg); }
 
-    /* ==================== HAMBURGER (MOBILE) ==================== */
     .hamburger-btn {
       display: none; flex-direction: column; gap: 5px;
       background: none; border: none; cursor: pointer; padding: 0.5rem;
@@ -169,7 +165,6 @@
     .hamburger-btn.open span:nth-child(2) { opacity: 0; }
     .hamburger-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
-    /* ==================== MOBILE MENU ==================== */
     .mobile-menu {
       display: none;
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -231,7 +226,6 @@
     .hero-content { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; }
     .hero-text-col { flex: 1; min-width: 0; }
 
-    /* Must-1: hero signature element — a single memorable visual anchor */
     .hero-signature {
       flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 0.9rem;
     }
@@ -284,7 +278,6 @@
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
       background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    /* Could-6: typewriter effect on hero description */
     .hero-desc { max-width: 620px; min-height: 3.5rem; color: var(--text2); font-size: 1.1rem; line-height: 1.75; margin-bottom: 2rem; }
     .hero-desc .type-cursor { display: inline-block; width: 2px; height: 1em; background: var(--accent); margin-left: 2px; vertical-align: text-bottom; animation: blink 1s step-start infinite; }
     .hero-badges { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
@@ -298,7 +291,6 @@
     .hero-badge:hover { border-color: var(--accent); color: var(--text); }
     .hero-badge strong { color: var(--accent); }
 
-    /* ==================== HERO AVAILABILITY BADGE ==================== */
     .hero-availability {
       display: inline-flex; align-items: center; gap: 0.6rem;
       background: rgba(var(--accent-rgb),0.06); border: 1px solid rgba(var(--accent-rgb),0.2);
@@ -331,8 +323,6 @@
     @keyframes scrollLine { 0% { opacity: 1; transform: scaleY(1); } 100% { opacity: 0; transform: scaleY(0) translateY(-100%); } }
 
     section { padding: 7rem 4rem; scroll-margin-top: 90px; position: relative; }
-    /* Must-3: featured sections get a top accent rule + slightly more room,
-       signalling Projects and Experience carry more weight than the rest. */
     section.section-featured { padding-top: 8.5rem; }
     section.section-featured::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -344,7 +334,6 @@
     .section-title { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--text); }
     .section-line { flex: 1; height: 1px; background: var(--border); max-width: 200px; }
 
-    /* ACHIEVEMENTS */
     #achievements { background: var(--bg2); }
     .achieve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
     .achieve-card {
@@ -357,7 +346,6 @@
     .achieve-title { font-size: 0.98rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
     .achieve-sub { font-size: 0.83rem; color: var(--text2); line-height: 1.6; }
 
-    /* Should-5: persistent "current" marker — not hover-only, always on */
     .achieve-card.current, .project-card.current { border-color: rgba(var(--accent-rgb),0.4); }
     .current-flag {
       display: inline-flex; align-items: center; gap: 0.4rem;
@@ -393,7 +381,6 @@
     .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(var(--accent-rgb),0.05); }
     .skill-tag.accent { border-color: rgba(var(--accent-rgb),0.3); color: var(--accent); background: rgba(var(--accent-rgb),0.05); }
 
-    /* ==================== TOOLS GRID (dedicated Skills section) ==================== */
     #tools { background: var(--bg2); }
     .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .tool-card {
@@ -405,7 +392,6 @@
     .tool-title { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; font-family: var(--font); }
     .tool-list { font-size: 0.8rem; color: var(--text2); line-height: 1.6; font-family: var(--mono); }
 
-    /* PROJECTS */
     #projects { background: var(--bg); }
     .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 1.5rem; }
     .project-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; }
@@ -441,7 +427,6 @@
     .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .stack-tag { font-family: var(--mono); font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: var(--bg3); color: var(--text3); border: 1px solid var(--border); }
 
-    /* EXPERIENCE */
     #experience { background: var(--bg2); }
     .timeline { position: relative; }
     .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border); }
@@ -459,7 +444,138 @@
     .tech-used { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
     .tech-used-label { font-family: var(--mono); font-size: 0.68rem; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; margin-right: 0.3rem; }
 
-    #research { background: var(--bg); }
+    /* ==================== CERTIFICATIONS SECTION ==================== */
+    #certifications { background: var(--bg); }
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; }
+    
+    .cert-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 2rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .cert-card:hover {
+      border-color: rgba(var(--accent-rgb),0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+    
+    .cert-card:hover::before {
+      opacity: 1;
+    }
+    
+    .cert-tier-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(var(--accent-rgb),0.08);
+      border: 1px solid rgba(var(--accent-rgb),0.2);
+      border-radius: 50px;
+      padding: 0.35rem 0.85rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tier-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .cert-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    
+    .cert-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    
+    .cert-instructor {
+      font-size: 0.8rem;
+      color: var(--text2);
+      margin-bottom: 1rem;
+      font-family: var(--mono);
+      line-height: 1.5;
+    }
+    
+    .cert-divider {
+      height: 0.5px;
+      background: var(--border);
+      margin: 1rem 0;
+    }
+    
+    .cert-completion {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      font-family: var(--mono);
+      margin-bottom: 0.75rem;
+    }
+    
+    .completion-check {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(var(--accent2-rgb),0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+    }
+    
+    .cert-relevance {
+      font-size: 0.85rem;
+      color: var(--text2);
+      line-height: 1.6;
+    }
+    
+    .cert-relevance strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    .cert-stack-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      background: var(--bg3);
+      color: var(--text3);
+      border: 0.5px solid var(--border);
+      margin-top: 1rem;
+      margin-right: 0.4rem;
+    }
+
+    #research { background: var(--bg2); }
     .research-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem; max-width: 900px; position: relative; overflow: hidden; }
     .research-card::after { content: ''; position: absolute; right: -80px; top: -80px; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(var(--accent-rgb),0.05), transparent); }
     .research-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(var(--accent-rgb),0.08); border: 1px solid rgba(var(--accent-rgb),0.2); border-radius: 50px; padding: 0.3rem 0.9rem; font-family: var(--mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.5rem; }
@@ -477,7 +593,7 @@
     .accuracy-ring { flex-shrink: 0; }
     .accuracy-ring-track { fill: none; stroke: var(--border); stroke-width: 4; }
     .accuracy-ring-value { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-dasharray: 138; stroke-dashoffset: 138; transform: rotate(-90deg); transform-origin: 50% 50%; transition: stroke-dashoffset 1.2s ease; }
-    .accuracy-ring-value.in-view { stroke-dashoffset: 11; } /* 92% of 138 */
+    .accuracy-ring-value.in-view { stroke-dashoffset: 11; }
     .research-accuracy strong { font-family: var(--mono); font-size: 1.4rem; color: var(--accent); }
     .research-accuracy p { font-size: 0.8rem; color: var(--text2); }
     .research-link-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; border-radius: 8px; background: var(--accent); border: 1px solid var(--accent); color: #000; text-decoration: none; font-size: 0.82rem; font-family: var(--mono); font-weight: 700; transition: all 0.2s; }
@@ -529,7 +645,6 @@
     .footer-links a:not(:last-child) { border-right: 1px solid var(--border); }
     .footer-links a:hover { color: var(--accent); }
 
-    /* ==================== FLOATING SOCIAL BAR ==================== */
     .floating-social {
       position: fixed; bottom: 6.5rem; right: 2rem; z-index: 899;
       width: 56px;
@@ -554,9 +669,6 @@
     .social-link.linkedin svg { fill: currentColor; stroke: none; }
     .social-link.resume { background: var(--accent); color: #000; }
 
-    /* ==================== BACK TO TOP ====================
-       Same 56px outer width as .floating-social above so both
-       docks share one visual center line on the right edge. */
     .back-to-top {
       position: fixed; bottom: 1.75rem; right: 2rem; z-index: 900;
       width: 56px; height: 40px; border-radius: 999px;
@@ -605,6 +717,7 @@
       .edu-courses-grid { grid-template-columns: 1fr; }
       .extra-grid { grid-template-columns: 1fr 1fr; }
       .tools-grid { grid-template-columns: 1fr 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .about-stats { grid-template-columns: 1fr 1fr; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
@@ -616,6 +729,7 @@
       .hero-name { font-size: 3rem; }
       .extra-grid { grid-template-columns: 1fr; }
       .tools-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
       .about-stats { grid-template-columns: 1fr; }
     }
   </style>
@@ -635,6 +749,7 @@
       <li><a href="#tools">Tools</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -667,6 +782,7 @@
       <a href="#tools">Tools</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
       <a href="#research">Research</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -728,8 +844,8 @@
     <div class="achieve-card fade-up current">
       <span class="current-flag">Current Role</span>
       <div class="achieve-icon">💼</div>
-      <div class="achieve-title">Software Engineer @ OneKampas</div>
-      <div class="achieve-sub">Owned 5+ production modules end to end across NestJS, React Native, and Next.js.</div>
+      <div class="achieve-title">Full-Stack Engineer @ OneKampas</div>
+      <div class="achieve-sub">Shipped RAG AI assistants, AI assessments, Judge0 coding evaluation, &amp; centralized scoring. 5+ modules, 30+ tests.</div>
     </div>
     <div class="achieve-card fade-up">
       <div class="achieve-icon">📄</div>
@@ -769,11 +885,11 @@
   <div class="about-grid">
     <div class="about-text fade-up">
       <ul>
-        <li><strong>Full-Stack Software Engineer</strong> in Pune, India — 1.5+ years building production web &amp; mobile apps.</li>
-        <li>Work end-to-end: React Native mobile, NestJS backend, distributed systems.</li>
-        <li>At <strong>OneKampas Technologies</strong>, independently own feature modules using NestJS, React Native, MongoDB, Redis, and RabbitMQ.</li>
-        <li><strong>Peer-reviewed AI/ML researcher</strong> — published paper, 92% prediction accuracy.</li>
-        <li>Trajectory: software engineering as the foundation, AI/ML engineering as the destination.</li>
+        <li><strong>Full-Stack Software Engineer</strong> in Pune, India — 1.5+ years shipping production AI, backend, and mobile systems at scale.</li>
+        <li>At <strong>OneKampas Technologies</strong>, ship end-to-end features: RAG-based AI assistants, AI assessment platforms, automated coding evaluation (Judge0), and centralized scoring systems.</li>
+        <li>Backend architecture: NestJS microservices, Redis caching (40% latency reduction), RabbitMQ messaging, MongoDB. Frontend: React &amp; React Native.</li>
+        <li>AI engineering: semantic search, ONNX quantized embeddings, LLM integration, rate limiting, per-institution budgets, response validation.</li>
+        <li><strong>Peer-reviewed AI/ML researcher</strong> — published paper on predictive analytics (92% accuracy). Combining research + production engineering.</li>
       </ul>
       <div class="about-stats">
         <div class="stat fade-up">
@@ -831,14 +947,19 @@
         </div>
       </div>
       <div class="skills-group">
-        <h3>AI / ML</h3>
+        <h3>AI / ML & Advanced</h3>
         <div class="skills-tags">
+          <span class="skill-tag accent">RAG Systems</span>
+          <span class="skill-tag accent">Semantic Search</span>
+          <span class="skill-tag accent">LLM Integration</span>
           <span class="skill-tag accent">Python</span>
+          <span class="skill-tag">ONNX</span>
+          <span class="skill-tag">Judge0</span>
           <span class="skill-tag">scikit-learn</span>
           <span class="skill-tag">Pandas</span>
-          <span class="skill-tag">NLP / TF-IDF</span>
-          <span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">NLP</span>
           <span class="skill-tag">Gemini API</span>
+          <span class="skill-tag">OpenRouter</span>
         </div>
       </div>
       <div class="skills-group">
@@ -852,7 +973,7 @@
   </div>
 </section>
 
-<!-- TOOLS I WORK WITH (dedicated scannable grid) -->
+<!-- TOOLS I WORK WITH -->
 <section id="tools">
   <div class="section-header fade-up">
     <span class="section-number">03</span>
@@ -883,7 +1004,7 @@
     <div class="tool-card fade-up">
       <div class="tool-icon">🤖</div>
       <div class="tool-title">AI / ML</div>
-      <div class="tool-list">Python, scikit-learn, Pandas, NLP / TF-IDF, Gemini API</div>
+      <div class="tool-list">Python, RAG, Semantic Search, ONNX, LLM Integration, scikit-learn, Pandas, NLP, Gemini API, OpenRouter</div>
     </div>
     <div class="tool-card fade-up">
       <div class="tool-icon">🔐</div>
@@ -897,8 +1018,8 @@
     </div>
     <div class="tool-card fade-up">
       <div class="tool-icon">🧪</div>
-      <div class="tool-title">Tools</div>
-      <div class="tool-list">Postman, Figma, Git</div>
+      <div class="tool-title">Tools & Testing</div>
+      <div class="tool-list">Jest, Judge0, Postman, Figma, Git, GitHub</div>
     </div>
     <div class="tool-card fade-up">
       <div class="tool-icon">📚</div>
@@ -982,17 +1103,19 @@
   <div class="timeline">
     <div class="timeline-item fade-up">
       <div class="timeline-period">Jan 2026 — Present</div>
-      <div class="timeline-role">Software Engineer</div>
+      <div class="timeline-role">Full-Stack Software Engineer</div>
       <div class="timeline-company">OneKampas Technologies <span></span> Pune</div>
       <ul class="timeline-bullets">
-        <li>Built NestJS modules, controllers, services, and guards for a multi-role campus placement platform.</li>
-        <li>Built real-time push notifications with RabbitMQ + FCM for reliable cross-platform delivery.</li>
-        <li>Led Redis caching on high-traffic endpoints, cutting response time ~40%.</li>
-        <li>Owned 5+ modules end to end — jobs, assessments, notifications, admin, disputes.</li>
-        <li>Shipped all features in strict TypeScript across backend and mobile.</li>
+        <li>Built a RAG-based AI support assistant with intent matching, hybrid lexical + semantic search, LLM fallback, and 384-dim quantized ONNX embeddings.</li>
+        <li>Added Redis-based rate limiting and per-institution AI budgets with LLM fallback, usage/cost tracking, and response validation.</li>
+        <li>Built an AI assessment platform for coding, MCQ, aptitude, interview, and communication tracks with AI-generated questions and shared workflows.</li>
+        <li>Built Judge0-based coding evaluation with AI-generated test cases, deterministic grading, sandboxed execution, and 7 language support.</li>
+        <li>Built centralized Student Employability Index (SEI) replacing 3 implementations, with configurable weights and 30+ test coverage.</li>
+        <li>Led Redis caching on high-traffic endpoints, cutting response time ~40%. Built real-time notifications with RabbitMQ + FCM.</li>
+        <li>Owned 5+ modules end to end across NestJS backend, React/React Native frontend, and core placement workflows.</li>
       </ul>
       <div class="tech-used"><span class="tech-used-label">Tech:</span>
-        <span class="skill-tag accent">NestJS</span><span class="skill-tag accent">React Native</span><span class="skill-tag accent">Redis</span><span class="skill-tag accent">RabbitMQ</span><span class="skill-tag accent">MongoDB</span><span class="skill-tag">TypeScript</span>
+        <span class="skill-tag accent">NestJS</span><span class="skill-tag accent">TypeScript</span><span class="skill-tag accent">React</span><span class="skill-tag accent">React Native</span><span class="skill-tag accent">MongoDB</span><span class="skill-tag accent">Redis</span><span class="skill-tag accent">RabbitMQ</span><span class="skill-tag">RAG</span><span class="skill-tag">Semantic Search</span><span class="skill-tag">ONNX</span><span class="skill-tag">LLM Integration</span><span class="skill-tag">Judge0</span><span class="skill-tag">Jest</span>
       </div>
     </div>
     <div class="timeline-item fade-up">
@@ -1000,12 +1123,12 @@
       <div class="timeline-role">Software Engineer Trainee</div>
       <div class="timeline-company">OneKampas Technologies <span></span> Pune</div>
       <ul class="timeline-bullets">
-        <li>Shipped live production features from day one across the full stack.</li>
-        <li>Built and tested API workflows independently using Postman.</li>
-        <li>Used AI-assisted tools to speed up debugging on assigned tasks.</li>
+        <li>Contributed to NestJS backend and React Native frontend development across core platform features.</li>
+        <li>Built and tested REST APIs, database workflows, and integrations using MongoDB, Redis, and RabbitMQ.</li>
+        <li>Worked on authentication, notifications, placement, and student workflows, supporting features from development through testing and release.</li>
       </ul>
       <div class="tech-used"><span class="tech-used-label">Tech:</span>
-        <span class="skill-tag accent">React Native</span><span class="skill-tag accent">NestJS</span><span class="skill-tag">Node.js</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">RabbitMQ</span>
+        <span class="skill-tag accent">NestJS</span><span class="skill-tag accent">Node.js</span><span class="skill-tag accent">React Native</span><span class="skill-tag accent">MongoDB</span><span class="skill-tag accent">Redis</span><span class="skill-tag accent">RabbitMQ</span><span class="skill-tag accent">REST APIs</span>
       </div>
     </div>
     <div class="timeline-item fade-up">
@@ -1024,10 +1147,126 @@
   </div>
 </section>
 
+<!-- CERTIFICATIONS SECTION -->
+<section id="certifications" class="section-featured">
+  <div class="section-header fade-up">
+    <span class="section-number">06</span>
+    <h2 class="section-title">Professional Certifications</h2>
+    <div class="section-line"></div>
+  </div>
+  
+  <div class="certs-grid">
+    
+    <!-- CERT 1: ML & Data Science -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🤖</div>
+      <h3 class="cert-title">Machine Learning & Data Science A-Z</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Validates <strong>published research</strong> on predictive analytics (92% accuracy). Core ML fundamentals for AI integration work.</p>
+      <div class="cert-stack-tag">ML</div>
+      <div class="cert-stack-tag">AI</div>
+      <div class="cert-stack-tag">Python</div>
+      <div style="margin-top:0.75rem; font-size:0.85rem; font-family:var(--mono); color:var(--text2);">
+        <strong>Certificate ID:</strong> UC-68c3c3f4-334d-41f7-9814-b102180d6761
+      </div>
+    </div>
+    
+    <!-- CERT 2: Python Data Analysis -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">📊</div>
+      <h3 class="cert-title">Learning Python for Data Analysis and Visualization</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Data preprocessing, EDA, and visualization for ML research. Supports published paper methodology.</p>
+      <div class="cert-stack-tag">Data</div>
+      <div class="cert-stack-tag">Python</div>
+      <div class="cert-stack-tag">Pandas</div>
+      <div style="margin-top:0.75rem; font-size:0.85rem; font-family:var(--mono); color:var(--text2);">
+        <strong>Certificate ID:</strong> UC-536567a0-4727-43c0-9bf5-877af99361b7
+      </div>
+    </div>
+    
+    <!-- CERT 3: AWS & Cloud -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">☁️</div>
+      <h3 class="cert-title">Cloud Computing and Amazon Web Services Fundamentals</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Production infrastructure & deployment. Covers caching, messaging, and scaling strategies used at OneKampas.</p>
+      <div class="cert-stack-tag">AWS</div>
+      <div class="cert-stack-tag">Cloud</div>
+      <div class="cert-stack-tag">Infra</div>
+      <div style="margin-top:0.75rem; font-size:0.85rem; font-family:var(--mono); color:var(--text2);">
+        <strong>Certificate ID:</strong> UC-3a10c83b-3f3b-4b5b-bd0f-afb4d0bac957
+      </div>
+    </div>
+    
+    <!-- CERT 4: DSA -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">⚙️</div>
+      <h3 class="cert-title">Data Structures and Algorithms</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Backend optimization & system design. Applied to achieve 40% response time reduction with Redis caching at scale.</p>
+      <div class="cert-stack-tag">Backend</div>
+      <div class="cert-stack-tag">Performance</div>
+      <div class="cert-stack-tag">Design</div>
+      <div style="margin-top:0.75rem; font-size:0.85rem; font-family:var(--mono); color:var(--text2);">
+        <strong>Certificate ID:</strong> UC-536567a0-4727-43c0-9bf5-877af99361b7
+      </div>
+    </div>
+    
+    <!-- CERT 5: Network Security -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🔒</div>
+      <h3 class="cert-title">Fundamentals of Network Security</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Secure API design, Auth0, JWT implementation. Applied to RBAC, rate limiting, and budget enforcement systems.</p>
+      <div class="cert-stack-tag">Security</div>
+      <div class="cert-stack-tag">Auth</div>
+      <div class="cert-stack-tag">JWT</div>
+      <div style="margin-top:0.75rem; font-size:0.85rem; font-family:var(--mono); color:var(--text2);">
+        <strong>Certificate ID:</strong> UC-4ccf7219-f58e-4306-8399-c39f80ef08d3
+      </div>
+    </div>
+    
+    <!-- CERT 6: Ethical Hacking Beginners -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🛡️</div>
+      <h3 class="cert-title">Ethical Hacking Course for Beginners</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Security mindset for API & auth implementation. Defensive coding practices applied to production systems.</p>
+      <div class="cert-stack-tag">Security</div>
+      <div class="cert-stack-tag">Hacking</div>
+      <div class="cert-stack-tag">Defense</div>
+    </div>
+    
+    <!-- CERT 7: Intro Ethical Hacking -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">🔐</div>
+      <h3 class="cert-title">Intro to Ethical Hacking Certification</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Cybersecurity fundamentals for backend engineers. Complements network security foundations.</p>
+      <div class="cert-stack-tag">Security</div>
+      <div class="cert-stack-tag">Fundamentals</div>
+      <div class="cert-stack-tag">Ethical</div>
+    </div>
+    
+    <!-- CERT 8: Cloud Computing Intro -->
+    <div class="cert-card fade-up">
+      <div class="cert-icon">☁️</div>
+      <h3 class="cert-title">Introduction to Cloud Computing</h3>
+      <div class="cert-divider"></div>
+      <p class="cert-relevance">Cloud architecture foundation & infrastructure knowledge. Supports AWS certification and deployment strategies.</p>
+      <div class="cert-stack-tag">Cloud</div>
+      <div class="cert-stack-tag">Infra</div>
+      <div class="cert-stack-tag">Architecture</div>
+    </div>
+    
+  </div>
+</section>
+
 <!-- RESEARCH -->
 <section id="research">
   <div class="section-header fade-up">
-    <span class="section-number">06</span>
+    <span class="section-number">07</span>
     <h2 class="section-title">Research</h2>
     <div class="section-line"></div>
   </div>
@@ -1065,7 +1304,7 @@
 <!-- EDUCATION -->
 <section id="education">
   <div class="section-header fade-up">
-    <span class="section-number">07</span>
+    <span class="section-number">08</span>
     <h2 class="section-title">Education &amp; Courses</h2>
     <div class="section-line"></div>
   </div>
@@ -1082,24 +1321,13 @@
       <div class="edu-school">SIES College of Arts, Science &amp; Commerce, Mumbai</div>
       <div class="edu-percent">Percentage: <strong>63%</strong></div>
     </div>
-    <div class="edu-card fade-up">
-      <div class="edu-degree">Certifications</div>
-      <div class="edu-name">Courses Completed</div>
-      <div class="edu-school" style="margin-bottom:1rem;">Online Learning</div>
-      <ul class="courses-list">
-        <li>Machine Learning &amp; Data Science A-Z <span class="course-source">Udemy · 2024</span></li>
-        <li>Cloud Computing &amp; AWS Fundamentals <span class="course-source">Udemy · 2024</span></li>
-        <li>Python Data Analysis and Visualisation <span class="course-source">Udemy</span></li>
-        <li>MERN Developer Bootcamp <span class="course-source">Udemy</span></li>
-      </ul>
-    </div>
   </div>
 </section>
 
 <!-- EXTRA -->
 <section id="extra">
   <div class="section-header fade-up">
-    <span class="section-number">08</span>
+    <span class="section-number">09</span>
     <h2 class="section-title">Beyond Code</h2>
     <div class="section-line"></div>
   </div>
@@ -1224,7 +1452,7 @@
     ringObserver.observe(accuracyRing);
   }
 
-  /* Must-2: count-up animation for every stat marked .countup, once visible */
+  /* Count-up animation for every stat marked .countup */
   function animateCountUp(el) {
     var target = parseFloat(el.getAttribute('data-target'));
     var suffix = el.getAttribute('data-suffix') || '';
@@ -1250,7 +1478,7 @@
   }, { threshold: 0.5 });
   countUpEls.forEach(el => countUpObserver.observe(el));
 
-  /* Could-6: typewriter effect on the hero description, once on load */
+  /* Typewriter effect on the hero description */
   (function typeHeroDesc() {
     var wrap = document.getElementById('heroDesc');
     var target = document.getElementById('heroDescText');
@@ -1293,7 +1521,7 @@
     tagEl.style.transition = 'opacity 0.3s';
   }
 
-  /* ==================== SCROLL PROGRESS + BACK TO TOP ==================== */
+  /* Scroll progress + back to top */
   var progressFill = document.getElementById('progressFill');
   var backToTop = document.getElementById('backToTop');
   var ticking = false;
@@ -1314,7 +1542,7 @@
   });
   onScroll();
 
-  /* ==================== MOBILE MENU ==================== */
+  /* Mobile menu */
   var hamburgerBtn = document.getElementById('hamburgerBtn');
   var mobileMenu = document.getElementById('mobileMenu');
   var mobileMenuClose = document.getElementById('mobileMenuClose');
@@ -1347,7 +1575,7 @@
     });
   });
 
-  /* ==================== THEME TOGGLE ==================== */
+  /* Theme toggle */
   var themeToggle = document.getElementById('themeToggle');
   var htmlEl = document.documentElement;
   var savedTheme = null;
@@ -1369,7 +1597,7 @@
     }
   });
 
-  /* ==================== GA4 EVENT TRACKING ==================== */
+  /* GA4 event tracking */
   document.addEventListener('click', (e) => {
     var link = e.target.closest('[data-track]');
     if (!link || typeof gtag !== 'function') return;
